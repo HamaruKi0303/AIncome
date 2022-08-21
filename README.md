@@ -14,3 +14,9 @@
 AIで所得（Income）を得るため「AIncome」と名付けました．
 
 ![](https://hamaruki.com/wp-content/uploads/2022/08/スクリーンショット-2022-08-21-173848-1.jpg)
+
+
+
+<h2 id="参考サイト">参考サイト</h2>
+
+
