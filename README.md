@@ -20,3 +20,7 @@ AIで所得（Income）を得るため「AIncome」と名付けました．
 <h2 id="参考サイト">参考サイト</h2>
 
 
+*1：[AIを使って不労所得の道へ(1)～Python AnyTradingでランダム投資～【AIncomeプロジェクト】](https://hamaruki.com/2022/08/21/the_ai_unemployment_income_path_01/)
+*2：[AIを使って不労所得の道へ(2)～MLPでFXの学習させてみた～【AIncomeプロジェクト】](https://hamaruki.com/2022/08/21/the_ai_unemployment_income_path_02/)
+*3：[AIを使って不労所得の道へ(3)～学習結果をTensorboardで可視化させてみた～【AIncomeプロジェクト】](https://hamaruki.com/2022/08/21/the_ai_unemployment_income_path_03/)
+*4：[AIを使って不労所得の道へ(4)～学習回数を増やしてみた～【AIncomeプロジェクト】](https://hamaruki.com/2022/08/22/the_ai_unemployment_income_path_04/)
