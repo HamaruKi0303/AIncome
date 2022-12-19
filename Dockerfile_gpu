@@ -1,52 +1,67 @@
 # FROM python:3.6
 FROM nvcr.io/nvidia/pytorch:22.10-py3
 
-RUN conda create -n aincome python==3.6
 
+ENV TZ=Asia/Tokyo
+
+
+# ------------------------------------------
+# conda 
+#
+RUN conda create -n aincome python==3.6
 RUN conda init && \
     echo "conda activate aincome" >> ~/.bashrc
-
 ENV CONDA_DEFAULT_ENV aincome && \
     PATH /opt/conda/envs/aincome/bin:$PATH
-
 SHELL ["conda", "run", "-n", "aincome", "/bin/bash", "-c"]
 
+# ------------------------------------------
+# utils
+#
 RUN apt-get update
 RUN apt-get  install -y python3-dev libpq-dev build-essential 
 # RUN apt-get  install -y libopenmpi-dev
 
+# ------------------------------------------
+# Python
+#
+# ----------------
+# Deep
+#
 RUN pip install -U pip
-
+#
 # 強化学習 基礎関係
 RUN pip install "gym==0.19.0"
 RUN pip install stable-baselines[mpi]
-
+#
 # 深層学習関係
 RUN pip uninstall -y tensorflow-gpu
 RUN pip uninstall -y tensorflow
 RUN pip install tensorflow-gpu==1.14.0
-
+#
 # 強化学習 取引関係
 RUN pip install gym-anytrading
-
+#
+# ----------------
+# trade
+#
 # 取引分析関係
 RUN pip install QuantStats
-
+#
 # Tensorboard関係
 RUN pip uninstall tensorboard-plugin-wit --yes
-
+#
 # Ta-lib 関係
 RUN curl -L http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz -O && tar xzvf ta-lib-0.4.0-src.tar.gz
 RUN cd ta-lib && ./configure --prefix=/usr && make && make install && cd - && pip install ta-lib
-
-
+#
 # yahoo api 関係
 RUN pip install yahoo_finance_api2
 RUN pip install yfinance
-
+#
 # Historic Crypto
 RUN pip install Historic-Crypto
-
+#
 # 可視化便利関係
 RUN pip install mplfinance
 
