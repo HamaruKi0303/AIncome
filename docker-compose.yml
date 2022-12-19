@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  aincome-app:
+    container_name: aincome
+    restart: always
+    build: 
+      context: .
+      dockerfile: Dockerfile_gpu
+    volumes:
+      # - .:/home
+      - .:/aincome
+    # working_dir: /home
+    working_dir: /aincome
+    tty:  true
+    ports:
+      - "7171:7171"
+      - "5151:5151"
+    # command: python run.py
+
