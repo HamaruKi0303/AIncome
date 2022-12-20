@@ -25,7 +25,7 @@ services:
       dockerfile: Dockerfile_tb
     volumes:
       # - .:/home
-      - ./logs:/logs
+      - .:/home
     ports:
       - "10000:6006"
 

@@ -3,3 +3,9 @@ ngc.md5
 ngccli_mac.zip
 logs/*
 data/*
+Dockerfile_gpu
+**/**/*.zip
+
+**/**/*.pyc
+Dockerfile_tb
+log.txt
