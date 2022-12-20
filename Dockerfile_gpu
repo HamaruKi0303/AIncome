@@ -76,3 +76,4 @@ RUN pip install mplfinance
 # jupyter notebook --config=/home/john/mystuff/jupyter_notebook_config.json --port=7171 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
 # jupyter notebook --port=8888 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
 # jupyter notebook --port=7171 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+# jupyter-lab --port=7171 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
