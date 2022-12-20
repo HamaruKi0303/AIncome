@@ -15,5 +15,17 @@ services:
     ports:
       - "7171:7171"
       - "5151:5151"
-    # command: jupyter notebook --config=/home/john/mystuff/jupyter_notebook_config.json --port=7171 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+    command: jupyter-lab --port=7171 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+    
+  tb-app:
+    container_name: tb
+    restart: always
+    build: 
+      context: .
+      dockerfile: Dockerfile_tb
+    volumes:
+      # - .:/home
+      - ./logs:/logs
+    ports:
+      - "10000:6006"
 
