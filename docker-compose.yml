@@ -15,5 +15,5 @@ services:
     ports:
       - "7171:7171"
       - "5151:5151"
-    # command: python run.py
+    # command: jupyter notebook --config=/home/john/mystuff/jupyter_notebook_config.json --port=7171 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
 

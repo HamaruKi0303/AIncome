@@ -1,19 +1,17 @@
 # FROM python:3.6
-FROM nvcr.io/nvidia/pytorch:22.10-py3
-
+FROM nvcr.io/nvidia/pytorch:20.10-py3
 
 ENV TZ=Asia/Tokyo
-
 
 # ------------------------------------------
 # conda 
 #
-RUN conda create -n aincome python==3.6
-RUN conda init && \
-    echo "conda activate aincome" >> ~/.bashrc
-ENV CONDA_DEFAULT_ENV aincome && \
-    PATH /opt/conda/envs/aincome/bin:$PATH
-SHELL ["conda", "run", "-n", "aincome", "/bin/bash", "-c"]
+# RUN conda create -n aincome python==3.6.1
+# RUN conda init && \
+#     echo "conda activate aincome" >> ~/.bashrc
+# ENV CONDA_DEFAULT_ENV aincome && \
+#     PATH /opt/conda/envs/aincome/bin:$PATH
+# SHELL ["conda", "run", "-n", "aincome", "/bin/bash", "-c"]
 
 # ------------------------------------------
 # utils
@@ -61,12 +59,20 @@ RUN pip install yfinance
 #
 # Historic Crypto
 RUN pip install Historic-Crypto
+RUN pip install --upgrade pandas
 #
 # 可視化便利関係
 RUN pip install mplfinance
+
+# RUN pip install pip-autoremove && \
+#     pip-autoremove jupyter -y && \
+#     pip install notebook
 
 # ------------------------
 # memo
 #
 # docker rmi -f fc0508fcb0c5 6ae9bd53f635 5f1485c70c9a
 # docker-compose exec aincome-app /bin/bash
+# jupyter notebook --config=/home/john/mystuff/jupyter_notebook_config.json --port=7171 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+# jupyter notebook --port=8888 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+# jupyter notebook --port=7171 --ip=0.0.0.0 --allow-root --NotebookApp.token=''
